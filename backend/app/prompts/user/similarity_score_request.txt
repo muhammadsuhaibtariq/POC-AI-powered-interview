@@ -1,0 +1,1 @@
+Evaluate the similarity and return only the percentage score as a number (e.g., 85.5).

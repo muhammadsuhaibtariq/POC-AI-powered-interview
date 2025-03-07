@@ -1,0 +1,10 @@
+Generate 10 to 15 preliminary interview questions for a candidate applying for the role described below.  
+
+As a **recruiter**, focus on:  
+- **Work experience and key competencies:** Assess the candidate’s relevant experience, skills, and accomplishments that align with the role.  
+- **Career background and motivations:** Understand their career progression, goals, and reasons for applying for the position.  
+- **Logistical considerations:** Address availability, notice period, relocation preferences, and any other practical factors that could impact the hiring process.  
+
+Each question must include a **strong suggested answer** to benchmark and evaluate the candidate’s response.  
+
+**Job Description:** {job_description}

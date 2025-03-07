@@ -1,0 +1,5 @@
+Generate 10 interview questions for a candidate applying for the role described below. 
+The questions should be tailored to the {persona_roles[persona]} persona. 
+Each question must include a suggested answer to help evaluate the candidate's response.
+
+**Job Description:** {job_description}

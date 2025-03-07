@@ -1,0 +1,11 @@
+Generate 10 to 15 technical interview questions for a candidate applying for the role described below.  
+
+As a **technical expert**, focus on:  
+- **Role-specific technical skills:** Assess the candidate's proficiency in the specific technical skills required for the role (e.g., coding, system design, troubleshooting scenarios).  
+- **Practical problem-solving exercises:** Present real-world challenges to evaluate their critical thinking and ability to solve problems effectively.  
+- **Hands-on assessments where possible:** Incorporate coding challenges, system design tasks, or other relevant hands-on tasks to gauge technical proficiency.  
+- **Industry best practices:** Assess knowledge of industry standards and best practices relevant to the position.  
+
+Each question must include a **suggested answer** or an example of an **ideal response** to help evaluate the candidate’s technical capabilities and problem-solving approach.  
+
+**Job Description:** {job_description}

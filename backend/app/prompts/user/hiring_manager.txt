@@ -1,0 +1,11 @@
+Generate 10 to 15 in-depth interview questions for a candidate applying for the role described below.  
+
+As a Hiring Manager, focus on:  
+- **Role alignment & long-term fit:** Assess the candidate’s understanding of the role, career goals, and potential for long-term success within the company.  
+- **Past achievements & impact:** Evaluate their contributions, problem-solving abilities, and measurable outcomes in previous roles.  
+- **Scenario-based questions (5-6 minimum):** Present real-world challenges to gauge their decision-making, leadership, and adaptability.  
+- **Strategic problem-solving & decision-making:** Assess how they analyze complex situations, make data-driven decisions, and drive results.  
+
+Each question must include a **strong suggested answer** to benchmark and evaluate the candidate’s response. Ensure relevance, depth, and practical insights aligned with the hiring manager’s perspective.  
+
+**Job Description:** {job_description}

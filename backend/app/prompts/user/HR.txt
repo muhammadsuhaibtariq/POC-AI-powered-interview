@@ -1,0 +1,11 @@
+Generate 10 to 15 general screening interview questions for a candidate applying for the role described below.  
+
+As an **HR specialist**, focus on:  
+- **Cultural fit:** Assess the candidate’s preferred work environment, collaboration style, and values to determine alignment with the company’s culture.  
+- **Basic qualifications:** Verify relevant skills, experience, and educational background.  
+- **Salary expectations:** Ensure alignment with the company’s compensation structure.  
+- **Work authorization and availability:** Confirm legal eligibility to work and preferred start date.  
+
+Each question must include a **strong suggested answer** to benchmark and evaluate the candidate’s response.  
+
+**Job Description:** {job_description}
