@@ -1,0 +1,8 @@
+# Node artifacts
+/node_modules
+/.venv
+/.env
+/__pycache__
+__pycache__/
+/Documentation
+/Admin.py
