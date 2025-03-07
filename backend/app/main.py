@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, File, UploadFile, HTTPException, Form
+from fastapi import FastAPI, APIRouter, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import uvicorn
@@ -79,8 +79,8 @@ ALLOWED_EXTENSIONS = {'pdf', 'docx'}
 
 @router.post("/extract-text/", summary="Upload a document file (PDF or DOCX) or raw text")
 async def extract_text(
-    file: UploadFile = File(None),  # Explicitly mark as a File input
-    text: str = Form(None)  # Ensure text input is from form data
+    file: UploadFile = None,  # Explicitly mark as a File input
+    text: str = None  # Ensure text input is from form data
 ):
     """
     Upload a job description document (PDF, DOCX) or input plain text.
