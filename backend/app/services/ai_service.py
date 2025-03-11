@@ -4,6 +4,7 @@ import os
 from openai import OpenAI
 from ..models.question import QuestionResponse
 from ..utils.load_prompts import load_prompt
+from ..services.fetch_questions import fetch_hr_questions
 
 load_dotenv()
 
@@ -31,10 +32,13 @@ def generate_interview_questions(persona: str, job_description: str):
             "Hiring Manager": "hiring_manager.txt",
             "Technical Interviewer": "technical_interviewer.txt",
         }
-        prompt_file = persona_prompts.get(persona, "general.txt")  # Default to general.txt
-        user_prompt = load_prompt("user", prompt_file).format(job_description=job_description)
 
-        print(f"System message: {system_message}")
+        hr_questions = fetch_hr_questions(job_description, top_k=15)
+        prompt_file = persona_prompts.get(persona, "general.txt")  # Default to general.txt
+        user_prompt = load_prompt("user", prompt_file).format(
+            hr_questions=hr_questions,
+            job_description=job_description)
+
         print(f"User prompt: {user_prompt}")
 
         # API call to OpenAI GPT model

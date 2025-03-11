@@ -23,6 +23,7 @@ Create a `.env` file in the root of the backend project directory with the follo
 ```plaintext
 OPENAI_API_KEY="{Your OpenAI API Key}"
 MONGODB_URI_FASTAPI="mongodb+srv://{Your MongoDB Username}:{Your MongoDB Password}@{Your MongoDB Cluster}.mongodb.net"
+PINECONE_API_KEY="{Your Pinecone API Key}"
 ```
 
 ### 3. Run the Application

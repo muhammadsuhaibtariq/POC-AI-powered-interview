@@ -1,18 +1,25 @@
-from fastapi import FastAPI, APIRouter, UploadFile, HTTPException
+from fastapi import File, FastAPI, APIRouter, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import uvicorn
 
 from .services.execute_custom_extractors import process_extract_text
 from .services.ai_service import generate_interview_questions
+from .services.fetch_questions import fetch_hr_questions
+
 from .config.mongo_db import mongo_client, users_collection
+from .config.vector_db import index_1 as index
+
+from .utils.embeddings import get_embedding
 
 from .models.user import User, SaveResponseRequest
-from .models.question import QuestionRequest
+from .models.question import QuestionRequest, HRQuestionRequest
 
 from .utils.load_prompts import load_prompt
 
 import os
+import io
+import csv
 from openai import OpenAI
 from dotenv import load_dotenv
 load_dotenv()
@@ -240,6 +247,43 @@ def compare_answers_ai(email: str):
 
     return JSONResponse(content=similarity_scores, status_code=200)
 
+@router.post("/upload-hr-questions/")
+async def upload_questions(file: UploadFile = File(...)):
+    try:
+        # Read CSV file
+        contents = await file.read()
+        decoded_content = contents.decode("utf-8")
+        csv_reader = csv.reader(io.StringIO(decoded_content))
+
+        # Extract questions assuming first column contains questions
+        questions = []
+        for row in csv_reader:
+            if row:  # Avoid empty rows
+                questions.append(row[0])
+
+        if not questions:
+            raise HTTPException(status_code=400, detail="No questions found in the file.")
+
+        # Upsert questions into Pinecone
+        vectors = []
+        for idx, question in enumerate(questions):
+            embedding = get_embedding(question)
+            vectors.append({
+                "id": f"question-{idx}",
+                "values": embedding,
+                "metadata": {"question": question}
+            })
+
+        index.upsert(vectors=vectors)
+
+        return {"message": "Questions uploaded and stored successfully!", "total_questions": len(questions)}
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/fetch-hr-questions/")
+async def fetch_hr_question(request: HRQuestionRequest):
+    return fetch_hr_questions(request.job_description, request.top_k)
 
 # Include the router in the FastAPI application
 app.include_router(router)
