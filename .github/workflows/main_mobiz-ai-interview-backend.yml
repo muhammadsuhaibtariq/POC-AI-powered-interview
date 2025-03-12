@@ -10,13 +10,7 @@ on:
       - main
     paths:
       - 'backend/**'
-      - '.github/workflows/main_mobiz-ai-interviewer-backend.yml
-  push:
-    branches:
-      - main
-    paths:
-      - 'backend/**'
-      - '.github/workflows/deploy-backend.yml'
+      - '.github/workflows/main_mobiz-ai-interview-backend.yml'
   workflow_dispatch:
 
 jobs:
@@ -28,30 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'backend-ai-interviewer-hmgtcybhedfbgec4'
-          slot-name: 'Production''
-  workflow_dispatch:
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
