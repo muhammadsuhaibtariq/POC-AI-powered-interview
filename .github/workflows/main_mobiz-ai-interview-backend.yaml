@@ -30,4 +30,4 @@ jobs:
         with:
           app-name: 'backend-ai-interviewer-hmgtcybhedfbgec4'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_514aba2275d14caa954448339d1e10ab }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
