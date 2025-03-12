@@ -52,4 +52,4 @@ jobs:
           app-name: 'mobiz-ai-interview-backend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2276939C6D55471CB312EE1CE71F3FEE }}
-          # package: './backend'  # Specify the backend directory to deploy
+          package: './backend'  # Specify the backend directory to deploy
