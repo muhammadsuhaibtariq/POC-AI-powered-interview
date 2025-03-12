@@ -1,4 +1,5 @@
 uvicorn==0.34.0
+gunicorn>=22.0.0
 fastapi==0.115.8
 openai==1.63.2
 python-dotenv==1.0.1
@@ -11,3 +12,4 @@ python-multipart==0.0.20
 openai==1.63.2
 pinecone-client==5.0.1
 langchain-openai==0.3.8
+importlib-metadat==8.6.1
