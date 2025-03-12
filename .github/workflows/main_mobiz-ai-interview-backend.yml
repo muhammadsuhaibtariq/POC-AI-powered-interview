@@ -10,7 +10,7 @@ on:
       - main
     paths:
       - 'backend/**'
-      - '.github/workflows/main_mobiz-ai-interviewer-backend.yml
+      - '.github/workflows/main_mobiz-ai-interviewer-backend.yml'
   workflow_dispatch:
 
 jobs:
