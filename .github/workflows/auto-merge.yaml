@@ -15,6 +15,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_NUMBER=$(jq --raw-output .client_payload.pr_number "$GITHUB_EVENT_PATH")
+          PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo "🔁 Attempting to merge PR #$PR_NUMBER"
           gh pr merge $PR_NUMBER --squash --admin --delete-branch
