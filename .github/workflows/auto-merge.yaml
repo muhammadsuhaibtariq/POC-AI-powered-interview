@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
       - name: Auto Merge PR
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.MY_GITHUB_APP_TOKEN }}
         run: |
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           echo "🔁 Attempting to merge PR #$PR_NUMBER"
