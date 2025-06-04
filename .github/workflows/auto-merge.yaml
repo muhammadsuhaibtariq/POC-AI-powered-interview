@@ -15,7 +15,6 @@ jobs:
       pull-requests: write
       contents: write
     steps:
-      steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
