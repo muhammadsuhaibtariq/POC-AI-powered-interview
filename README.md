@@ -22,15 +22,13 @@ An AI-driven system that analyzes job descriptions and dynamically generates tai
 - Python 3.12
 
 ## Getting Started
-# Adding some info here
+
 ### 1. Clone and Setup
 
 ```bash
 # Clone the repository
 git clone <repository-url>
 cd POC-AI-powered-interview
-
-
 
 
 ```
